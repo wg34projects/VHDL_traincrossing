@@ -4,7 +4,7 @@
 --
 -- Author: Helmut Resch el16b005 BEL4
 -- Date:   March 2018
--- File:   train_crossing_new_sim.vhd
+-- File:   train_crossing_task1.vhd
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -42,9 +42,7 @@ end component;
 component gate_simulation
 
   generic 
-  (
-    initial_state_gate : t_gate_internal
-  );
+  (initial_state_gate : t_gate_internal);
 
   port 
   (
@@ -62,7 +60,7 @@ signal train_out_i    : std_logic;
 signal engine_open_o  : std_logic;
 signal engine_close_o : std_logic;
 signal light_o        : std_logic;
-signal gate_state_o	  : t_gate_external;
+signal gate_state_o	  : t_gate_external;		-- output for the 3 main states
 
 begin
 
@@ -93,6 +91,7 @@ begin
       gate_state_o => gate_state_o
     );
 
+  -- 1 Hz clock
   p_clk : process
 
 	begin
@@ -105,7 +104,6 @@ begin
 	end process p_clk;
 
   -- same test pattern as in solved example!
-
   run : process
 
 	begin

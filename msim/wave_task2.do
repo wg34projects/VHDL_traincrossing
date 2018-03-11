@@ -22,6 +22,8 @@ add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/track_blocked_o
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_run_s
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_measure_s
+
+add wave -divider -height 30 "TIMESTAMPS"
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_1_v
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_2_v
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_break_1_v

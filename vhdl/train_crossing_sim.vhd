@@ -12,7 +12,9 @@ use work.gate_FSM_types.all;
 
 entity gate_simulation is
 
-  generic (initial_state_gate : t_gate_internal := OPENED);
+  generic (
+           initial_state_gate : t_gate_internal := OPENED
+          );
 
   port 
   (
@@ -22,7 +24,6 @@ entity gate_simulation is
   );
 
 end gate_simulation;
-
 
 architecture sim of gate_simulation is 
 

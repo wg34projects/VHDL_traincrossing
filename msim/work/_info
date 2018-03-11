@@ -9,26 +9,26 @@ z2
 cModel Technology
 Z0 d/home/helmutresch/WorkDir/VHDL_traincrossing/msim
 Pgate_fsm_types
-Z1 w1520732940
+Z1 w1520765705
 R0
 Z2 8../vhdl/train_crossing_new_sim.vhd
 Z3 F../vhdl/train_crossing_new_sim.vhd
 l0
 L14
-V42dieag`[EkT4TP^Kggok2
-!s100 Zh>b`XD39`T<1^KMAjXn73
+VZF4=_Xz0f8HL7=<H;f;>_1
+!s100 zd7hAKHOiFnolJiL_ziCj0
 Z4 OV;C;10.5b;63
 32
-Z5 !s110 1520733346
+Z5 !s110 1520767671
 !i10b 1
-Z6 !s108 1520733346.000000
+Z6 !s108 1520767671.000000
 Z7 !s90 -reportprogress|300|../vhdl/train_crossing_new_sim.vhd|
 Z8 !s107 ../vhdl/train_crossing_new_sim.vhd|
 !i113 1
 Z9 tExplicit 1 CvgOpt 0
 Egate_simulation
 R1
-Z10 DPx4 work 14 gate_fsm_types 0 22 42dieag`[EkT4TP^Kggok2
+Z10 DPx4 work 14 gate_fsm_types 0 22 ZF4=_Xz0f8HL7=<H;f;>_1
 Z11 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -36,9 +36,9 @@ R0
 R2
 R3
 l0
-L30
-VboeT;M][3a87DFF5kFBae1
-!s100 jzMSXLEPAZ1=2kna:=29K1
+L32
+V9YS_7KmBdIS69AbUAf[g13
+!s100 <0g^2?U>`nn]nmeKzhAK[1
 R4
 32
 R5
@@ -53,11 +53,11 @@ R10
 R11
 R12
 R13
-DEx4 work 15 gate_simulation 0 22 boeT;M][3a87DFF5kFBae1
-l56
-L49
-V>=e6c_VIN1Id]46bDA37;2
-!s100 P;JQKC[4Dh1cN]gO[ShFC3
+DEx4 work 15 gate_simulation 0 22 9YS_7KmBdIS69AbUAf[g13
+l58
+L51
+V;PNU7g:=BXOZ`BM=UZW<O3
+!s100 FkSa6c@zRXmAF?B^c?S242
 R4
 32
 R5
@@ -68,54 +68,52 @@ R8
 !i113 1
 R9
 Etb_train_crossing
-Z14 w1520733311
-Z15 DPx4 work 16 train_simulation 0 22 9Q6U;5?iE:<KLU@7DW>9O0
+Z14 w1520767658
 R10
 R12
 R13
 R0
-Z16 8../tb/tb_train_crossing_task2.vhd
-Z17 F../tb/tb_train_crossing_task2.vhd
+Z15 8../tb/tb_train_crossing_task2.vhd
+Z16 F../tb/tb_train_crossing_task2.vhd
 l0
-L70
-V^do9XV1Ph1D?j?k:;[I`20
-!s100 4jaYohR@8cAKKTlLVXKTU1
+L18
+V5k1;1QUZc@zl4];fH>RzC3
+!s100 CeGkIBSKkgXBihR?C1XhT1
 R4
 32
 R5
 !i10b 1
 R6
-Z18 !s90 -reportprogress|300|../tb/tb_train_crossing_task2.vhd|
-Z19 !s107 ../tb/tb_train_crossing_task2.vhd|
+Z17 !s90 -reportprogress|300|../tb/tb_train_crossing_task2.vhd|
+Z18 !s107 ../tb/tb_train_crossing_task2.vhd|
 !i113 1
 R9
 Asim
-R15
 R10
 R12
 R13
-Z20 DEx4 work 17 tb_train_crossing 0 22 ^do9XV1Ph1D?j?k:;[I`20
-l120
-L77
-V`YnI9kZR=X<8h5<]f4W1a2
-!s100 U[:2on^ZfJ?j^P9E4O1^e3
+Z19 DEx4 work 17 tb_train_crossing 0 22 5k1;1QUZc@zl4];fH>RzC3
+l103
+L25
+V9eYf1BVTCZo^Ei1S;8fbH0
+!s100 RZQ1[RScQe]1@l^IEhXf_1
 R4
 32
 R5
 !i10b 1
 R6
+R17
 R18
-R19
 !i113 1
 R9
 Etrain_crossing
-Z21 w1520732833
+Z20 w1520732833
 R11
 R12
 R13
 R0
-Z22 8../vhdl/train_crossing.vhd
-Z23 F../vhdl/train_crossing.vhd
+Z21 8../vhdl/train_crossing.vhd
+Z22 F../vhdl/train_crossing.vhd
 l0
 L11
 VWe7o_F?JbWBNAgSDib;2D0
@@ -125,15 +123,15 @@ R4
 R5
 !i10b 1
 R6
-Z24 !s90 -reportprogress|300|../vhdl/train_crossing.vhd|
-Z25 !s107 ../vhdl/train_crossing.vhd|
+Z23 !s90 -reportprogress|300|../vhdl/train_crossing.vhd|
+Z24 !s107 ../vhdl/train_crossing.vhd|
 !i113 1
 R9
 Artl
 R11
 R12
 R13
-Z26 DEx4 work 14 train_crossing 0 22 We7o_F?JbWBNAgSDib;2D0
+Z25 DEx4 work 14 train_crossing 0 22 We7o_F?JbWBNAgSDib;2D0
 l35
 L28
 Vi2i5c;S8?1gRQcXAJlUQ33
@@ -143,8 +141,8 @@ R4
 R5
 !i10b 1
 R6
+R23
 R24
-R25
 !i113 1
 R9
 Ctrain_crossing_rtl_cfg
@@ -154,11 +152,11 @@ DAx4 work 14 train_crossing 3 rtl 22 i2i5c;S8?1gRQcXAJlUQ33
 R11
 R12
 R13
-R26
+R25
 w1509556805
 R0
+R21
 R22
-R23
 l0
 L174
 VM9><3dn>gzlk[S5a@[;7o1
@@ -168,17 +166,17 @@ R4
 !s110 1520356673
 !i10b 0
 !s108 1520356673.000000
+R23
 R24
-R25
 !i113 1
 R9
 Ptrain_simulation
 R12
 R13
-R14
+Z26 w1520733311
 R0
+R15
 R16
-R17
 l0
 L17
 V9Q6U;5?iE:<KLU@7DW>9O0
@@ -186,27 +184,27 @@ V9Q6U;5?iE:<KLU@7DW>9O0
 R4
 32
 b1
-R5
+Z27 !s110 1520733346
 !i10b 1
-R6
+Z28 !s108 1520733346.000000
+R17
 R18
-R19
 !i113 1
 R9
 Bbody
-R15
+DPx4 work 16 train_simulation 0 22 9Q6U;5?iE:<KLU@7DW>9O0
 R12
 R13
 l0
 L28
-Z27 VZ=KAkl6XdjCUA1A_h1[072
-Z28 !s100 ZGP;j5]m:M]ZdOa]]QB`L0
+VZ=KAkl6XdjCUA1A_h1[072
+!s100 ZGP;j5]m:M]ZdOa]]QB`L0
 R4
 32
-R5
+R27
 !i10b 1
-R6
+R28
+R17
 R18
-R19
 !i113 1
 R9

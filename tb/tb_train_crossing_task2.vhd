@@ -1,62 +1,11 @@
 -------------------------------------------------------------------------------
--- train_crossing state machine simulation model testbench task 1
--- one file for package / entity / architecture
+-- train_crossing state machine simulation model testbench task s
+-- one file for entity / architecture
 --
 -- Author: Helmut Resch el16b005 BEL4
 -- Date:   March 2018
--- File:   train_crossing_new_sim.vhd
+-- File:   train_crossing_task2.vhd
 -------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------
--- package with the procedure
--------------------------------------------------------------------------------
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-
-package train_simulation is
-
-  procedure train_simulation (
-                              constant timevalue : in time;
-                              signal train_in : out std_logic;
-                              signal train_out : out std_logic;
-                              signal track_blocked : inout std_logic
-                             );
-
-  end train_simulation;
-
-  package body train_simulation is
-
-    procedure train_simulation (
-                                constant timevalue : in time;
-                                signal train_in : out std_logic;
-                                signal train_out : out std_logic;
-                                signal track_blocked : inout std_logic
-                               ) is
-
-  begin
-  
-    if (timevalue < 6 sec) then assert false report
-
-      "minimum time to pass track is 6 sec"
-      severity warning;
-
-    elsif (track_blocked = '1') then assert false report
-
-      "another train is already crossing"
-      severity warning;
-
-    else
-
-      train_in <= '1', '0' after 1 sec;
-      train_out <= '1' after (timevalue - 1 sec), '0' after timevalue;
-      track_blocked <= '1', '0' after (timevalue + 6 sec);
-
-    end if;
-
-  end train_simulation;
-
-end package body train_simulation;
 
 -------------------------------------------------------------------------------
 -- entity
@@ -64,8 +13,7 @@ end package body train_simulation;
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-use work.gate_FSM_types.all;
-use work.train_simulation.all;
+use work.gate_FSM_types.all;		-- package for FSM types
 
 entity tb_train_crossing is 
 end tb_train_crossing;
@@ -75,6 +23,43 @@ end tb_train_crossing;
 -------------------------------------------------------------------------------
 
 architecture sim of tb_train_crossing is
+
+  -- procedure for train
+  procedure train_sim_model (constant time_value : in time;
+                             signal train_in_s : out std_logic;
+                             signal train_out_s : out std_logic;
+						     -- track_blocked_s must be inout because it is
+							 -- read and written in procedure
+                             signal track_blocked_s : inout std_logic) is
+
+  begin
+  
+    -- warning if to short time frame for passing the track has been given
+    if (time_value < 6 sec) then assert false report
+
+      "shortest time for train_sim_model is 6 sec!"
+      severity warning;
+
+	-- warning if the track is blocked
+    elsif (track_blocked_s = '1') then assert false report
+
+      "there is already another train on the track!"
+      severity warning;
+
+    else
+
+      -- 1 second train in on  = train approaches
+      train_in_s <= '1', '0' after 1 sec;
+	  -- 1 second train out on = train leaves
+	  -- train needs tiven time to pass the track
+      train_out_s <= '1' after (time_value - 1 sec), '0' after time_value;
+	  -- track is blocked for additional 6 seconds after leaving
+      -- like written in specification
+      track_blocked_s <= '1', '0' after (time_value + 6 sec);
+
+    end if;
+
+  end train_sim_model;
 
 component train_crossing
 
@@ -94,9 +79,7 @@ end component;
 component gate_simulation
 
   generic 
-  (
-    initial_state_gate : t_gate_internal
-  );
+  (initial_state_gate : t_gate_internal);
 
   port 
   (
@@ -107,15 +90,15 @@ component gate_simulation
 
 end component;
 
-signal clk_i     	  : std_logic;
-signal reset_i   	  : std_logic;
-signal train_in_i     : std_logic;
-signal train_out_i    : std_logic;
-signal engine_open_o  : std_logic;
-signal engine_close_o : std_logic;
-signal light_o        : std_logic;
+signal clk_i     	   : std_logic;
+signal reset_i   	   : std_logic;
+signal train_in_i      : std_logic;
+signal train_out_i     : std_logic;
+signal engine_open_o   : std_logic;
+signal engine_close_o  : std_logic;
+signal light_o         : std_logic;
 signal track_blocked_o : std_logic;
-signal gate_state_o	  : t_gate_external;
+signal gate_state_o	   : t_gate_external;		-- output for the 3 main states
 
 begin
 
@@ -158,7 +141,6 @@ begin
 	end process p_clk;
 
   -- test pattern like in solved example
-
   run : process
 
 	begin
@@ -172,22 +154,20 @@ begin
 	  reset_i <= '0';
       wait for 10 sec;
 
-	  train_simulation(6 sec, train_in_i, train_out_i, track_blocked_o);
+	  train_sim_model(6 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 15 sec;
 
-	  train_simulation(10 sec, train_in_i, train_out_i, track_blocked_o);
+	  train_sim_model(10 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 20 sec;
 
-	  train_simulation(8 sec, train_in_i, train_out_i, track_blocked_o);
+	  train_sim_model(8 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 1 sec;
 
-	  train_simulation(5.5 sec, train_in_i, train_out_i, track_blocked_o);
+	  train_sim_model(5.5 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 1 sec;
 
-	  train_simulation(6 sec, train_in_i, train_out_i, track_blocked_o);
+	  train_sim_model(6 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 10 sec;
-
-      assert false report "END OF THIS SIMULATION" severity failure;
 
 	end process run;
 

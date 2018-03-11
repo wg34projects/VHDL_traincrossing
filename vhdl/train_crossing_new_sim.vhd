@@ -8,12 +8,14 @@
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
--- package for FMS state types - later used also in testbench
+-- package for FSM state types - later used also in testbench
 -------------------------------------------------------------------------------
 
 package gate_FSM_types is
 
+  -- states that are shown on output, only the main states are important
   type t_gate_external is (CLOSED, OPENED, INTERMEDIATE);
+  -- internal possible states
   type t_gate_internal is (CLOSED, OPENING, OPENING_BREAK, OPENED, CLOSING, CLOSING_BREAK);
 
 end gate_FSM_types;
