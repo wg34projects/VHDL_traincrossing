@@ -55,6 +55,7 @@ architecture sim of gate_simulation is
 	-- signal if timer is on or off with initial value
 	signal timer_run_s : std_logic := '0';
 
+-- FSM 6 states closed-opening-opening break-opened-closing-closing break
 begin
 
   p_gate_check : process (gate_close_i, gate_open_i)
@@ -70,11 +71,12 @@ begin
     case gate_state_s is
 
       when CLOSED =>
-
+		
 	    -- start OPENING
 		if (gate_close_i = '0' and gate_open_i = '1') then
 
 		  gate_state_s <= OPENING;
+		  report "OPENING";
           -- time OPENDED = 4 sec
 		  timer_run_s <= '1' after 4 sec;
 		  -- safe start_1 time
@@ -94,12 +96,13 @@ begin
         elsif (gate_close_i = '1' and gate_open_i = '0') then
  
           gate_state_s <= CLOSING;
+		  report "CLOSING";
 		  -- time CLOSED = before OPENING
           timer_run_s <= '1' after (now - timer_start_1_v);
 
 		-- OPENING_BREAK
 		else
-	
+
 		  gate_state_s <= OPENING_BREAK;
 		  timer_run_s <= '0';
 		  -- safe break_1 time
@@ -108,6 +111,8 @@ begin
 		end if;
 
       when OPENING_BREAK =>
+
+    	report "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gate break";
 
 		-- start OPENING
 		if (gate_close_i = '0' and gate_open_i = '1') then
@@ -131,6 +136,7 @@ begin
 		if (gate_close_i = '1' and gate_open_i = '0') then
 
 		  gate_state_s <= CLOSING;
+		  report "CLOSING";
 		  -- time closed = 4 sec
 		  timer_run_s <= '1' after 4 sec;
 		  -- safe start_2 time
@@ -150,6 +156,7 @@ begin
 		elsif (gate_close_i = '0' and gate_open_i = '1') then
 
 		  gate_state_s <= OPENING;
+		  report "OPENING";
 		  -- time OPENED = before CLOSING
 		  timer_run_s <= '1' after (now - timer_start_2_v);
 
@@ -164,6 +171,8 @@ begin
 		end if;
 
       when CLOSING_BREAK =>
+
+   	    report "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gate break";
 
 		-- start CLOSING
 		if (gate_close_i = '1' and gate_open_i = '0') then
@@ -192,10 +201,12 @@ begin
 	  if (gate_state_s = CLOSED) then
 
 		gate_state_o <= CLOSED;				-- output to "outside" CLOSED state
+		report "CLOSED";
 
 	  elsif (gate_state_s = OPENED) then
 
 		gate_state_o <= OPENED;				-- output to "outside" OPENED state
+		report "OPENED";
 
 	  else
 

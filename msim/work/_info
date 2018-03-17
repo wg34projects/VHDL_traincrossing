@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/helmutresch/WorkDir/VHDL_traincrossing/msim
 Pgate_fsm_types
-Z1 w1520765705
+Z1 w1521329187
 R0
 Z2 8../vhdl/train_crossing_new_sim.vhd
 Z3 F../vhdl/train_crossing_new_sim.vhd
@@ -19,9 +19,9 @@ VZF4=_Xz0f8HL7=<H;f;>_1
 !s100 zd7hAKHOiFnolJiL_ziCj0
 Z4 OV;C;10.5b;63
 32
-Z5 !s110 1520767671
+Z5 !s110 1521329191
 !i10b 1
-Z6 !s108 1520767671.000000
+Z6 !s108 1521329191.000000
 Z7 !s90 -reportprogress|300|../vhdl/train_crossing_new_sim.vhd|
 Z8 !s107 ../vhdl/train_crossing_new_sim.vhd|
 !i113 1
@@ -54,10 +54,10 @@ R11
 R12
 R13
 DEx4 work 15 gate_simulation 0 22 9YS_7KmBdIS69AbUAf[g13
-l58
+l59
 L51
-V;PNU7g:=BXOZ`BM=UZW<O3
-!s100 FkSa6c@zRXmAF?B^c?S242
+VOTKC4kKGHd?En267OUCWR1
+!s100 ``RVHPE5cfoI4o]WS`_DU2
 R4
 32
 R5
@@ -68,7 +68,7 @@ R8
 !i113 1
 R9
 Etb_train_crossing
-Z14 w1520767658
+Z14 w1521329076
 R10
 R12
 R13
@@ -93,10 +93,10 @@ R10
 R12
 R13
 Z19 DEx4 work 17 tb_train_crossing 0 22 5k1;1QUZc@zl4];fH>RzC3
-l103
+l109
 L25
-V9eYf1BVTCZo^Ei1S;8fbH0
-!s100 RZQ1[RScQe]1@l^IEhXf_1
+VV6]k]a1Q0KEJc5EX7?H2l2
+!s100 ReCKRg5O:oTP63jj5CFc61
 R4
 32
 R5
@@ -107,7 +107,7 @@ R18
 !i113 1
 R9
 Etrain_crossing
-Z20 w1520732833
+Z20 w1521327125
 R11
 R12
 R13
@@ -134,8 +134,8 @@ R13
 Z25 DEx4 work 14 train_crossing 0 22 We7o_F?JbWBNAgSDib;2D0
 l35
 L28
-Vi2i5c;S8?1gRQcXAJlUQ33
-!s100 3@jVl:<Ac4J2TJ4bUYRZK3
+VhN;a0`14nW2N8jE_AjR>P2
+!s100 RKg8V31ZgC3ZLkXijZXVD2
 R4
 32
 R5

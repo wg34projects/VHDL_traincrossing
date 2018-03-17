@@ -18,7 +18,7 @@ add wave -divider -height 30 "ENTITY SIM"
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_open_i
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_close_i
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_state_s
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_state_s
+# add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_state_s
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_run_s
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_measure_s
 

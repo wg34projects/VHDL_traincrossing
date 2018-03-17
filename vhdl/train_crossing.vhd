@@ -136,9 +136,18 @@ begin
 
 		when opening1 =>
 
+
 			engine_open_o <= '1';
 			engine_close_o <= '0';
 			light_o <= '0';
+			nextstate_s <= opening2;
+			blink <= blink + 1;
+
+		when opening2 =>
+
+			engine_open_o <= '1';
+			engine_close_o <= '0';
+			light_o <= '1';
 
 			if blink = 2 then
 
@@ -147,17 +156,9 @@ begin
 
 			else
 
-				nextstate_s <= opening2;
+				nextstate_s <= opening1;
 
 			end if;
-
-		when opening2 =>
-
-			engine_open_o <= '1';
-			engine_close_o <= '0';
-			light_o <= '1';
-			blink <= blink + 1;
-			nextstate_s <= opening1;
 
 		when others =>
 

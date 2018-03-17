@@ -81,7 +81,7 @@ begin
 
   generic map
   (
-    initial_state_gate => CLOSED
+    initial_state_gate => OPENED
   )
 
   port map 
@@ -103,6 +103,7 @@ begin
 
 	end process p_clk;
 
+  -- same test pattern as in solved example!
   run : process
 
 	begin
