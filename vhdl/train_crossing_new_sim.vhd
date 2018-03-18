@@ -32,7 +32,7 @@ use work.gate_FSM_types.all;				-- package as defined above
 entity gate_simulation is
 
   -- generic for the initial state of simulation
-  generic (initial_state_gate : t_gate_internal := OPENED);
+  generic (initial_state_gate : t_gate_internal := CLOSED);
 
   -- port declaration
   port 
@@ -76,7 +76,7 @@ begin
 		if (gate_close_i = '0' and gate_open_i = '1') then
 
 		  gate_state_s <= OPENING;
-		  report "OPENING";
+		  report "OPENING /////";
           -- time OPENDED = 4 sec
 		  timer_run_s <= '1' after 4 sec;
 		  -- safe start_1 time
@@ -96,7 +96,7 @@ begin
         elsif (gate_close_i = '1' and gate_open_i = '0') then
  
           gate_state_s <= CLOSING;
-		  report "CLOSING";
+		  report "CLOSING \\\\\";
 		  -- time CLOSED = before OPENING
           timer_run_s <= '1' after (now - timer_start_1_v);
 
@@ -136,7 +136,7 @@ begin
 		if (gate_close_i = '1' and gate_open_i = '0') then
 
 		  gate_state_s <= CLOSING;
-		  report "CLOSING";
+		  report "CLOSING \\\\\";
 		  -- time closed = 4 sec
 		  timer_run_s <= '1' after 4 sec;
 		  -- safe start_2 time
@@ -156,7 +156,7 @@ begin
 		elsif (gate_close_i = '0' and gate_open_i = '1') then
 
 		  gate_state_s <= OPENING;
-		  report "OPENING";
+		  report "OPENING /////";
 		  -- time OPENED = before CLOSING
 		  timer_run_s <= '1' after (now - timer_start_2_v);
 
@@ -201,12 +201,12 @@ begin
 	  if (gate_state_s = CLOSED) then
 
 		gate_state_o <= CLOSED;				-- output to "outside" CLOSED state
-		report "CLOSED";
+		report "CLOSED -----";
 
 	  elsif (gate_state_s = OPENED) then
 
 		gate_state_o <= OPENED;				-- output to "outside" OPENED state
-		report "OPENED";
+		report "OPENED |||||";
 
 	  else
 

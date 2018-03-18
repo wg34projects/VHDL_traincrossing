@@ -24,16 +24,16 @@ add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_measure_s
 
 add wave -divider -height 30 "TIMESTAMPS"
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_1_v
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_2_v
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_break_1_v
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/p_gate_check/timer_break_2_v
+add wave -noupdate -height 30 -radix time /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_1_v
+add wave -noupdate -height 30 -radix time /tb_train_crossing/i_gate_simulation/p_gate_check/timer_start_2_v
+add wave -noupdate -height 30 -radix time /tb_train_crossing/i_gate_simulation/p_gate_check/timer_break_1_v
+add wave -noupdate -height 30 -radix time /tb_train_crossing/i_gate_simulation/p_gate_check/timer_break_2_v
 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}
-configure wave -namecolwidth 250
-configure wave -valuecolwidth 10
-configure wave -signalnamewidth 0
+configure wave -namecolwidth 500
+configure wave -valuecolwidth 100
+configure wave -signalnamewidth 20
 configure wave -justifyvalue left
 

@@ -18,15 +18,13 @@ add wave -divider -height 30 "ENTITY SIM"
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_open_i
 # add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_close_i
 add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_state_s
-# add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/gate_state_s
-add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_run_s
-# add wave -noupdate -height 30 -format Logic /tb_train_crossing/i_gate_simulation/timer_measure_s
+add wave -noupdate -height 30 -radix time /tb_train_crossing/i_gate_simulation/timer_run_s
 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}
-configure wave -namecolwidth 250
-configure wave -valuecolwidth 10
-configure wave -signalnamewidth 0
+configure wave -namecolwidth 500
+configure wave -valuecolwidth 100
+configure wave -signalnamewidth 20
 configure wave -justifyvalue left
 

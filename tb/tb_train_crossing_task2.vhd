@@ -174,6 +174,8 @@ begin
 	  train_sim_model(6 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 15 sec;
 
+
+
 --# ** Note: ______________________________________________________________________________[ABC]-[DEF]-[GHI]-[JKL]-/RAILJET\__________
 --#    Time: 32 sec  Iteration: 0  Instance: /tb_train_crossing
 --# ** Note: CLOSING
@@ -188,6 +190,8 @@ begin
       -- 32 sec next train in - 42 sec train out - 48 sec next safe in
 	  train_sim_model(10 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 20 sec;
+
+
 
 --# ** Note: ______________________________________________________________________________[ABC]-[DEF]-[GHI]-[JKL]-/RAILJET\__________
 --#    Time: 52 sec  Iteration: 0  Instance: /tb_train_crossing
@@ -222,6 +226,8 @@ begin
 	  train_sim_model(2 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 5 sec;
 
+
+
 --# ** Note: ______________________________________________________________________________[ABC]-[DEF]-[GHI]-[JKL]-/RAILJET\__________
 --#    Time: 69 sec  Iteration: 0  Instance: /tb_train_crossing
 --# ** Note: CLOSING
@@ -249,9 +255,6 @@ begin
 	  train_sim_model(4 sec, train_in_i, train_out_i, track_blocked_o);
       wait for 15 sec;
 
-	  -- 97 sec train in - 117 sec train out - 122 sec next safe in
-	  train_sim_model(20 sec, train_in_i, train_out_i, track_blocked_o);
-      wait for 10 sec;
 
 --# ** Note: ______________________________________________________________________________[ABC]-[DEF]-[GHI]-[JKL]-/RAILJET\__________
 --#    Time: 97 sec  Iteration: 0  Instance: /tb_train_crossing
@@ -261,12 +264,20 @@ begin
 --#    Time: 102500 ms  Iteration: 4  Instance: /tb_train_crossing/i_gate_simulation
 --# ** Error: track blocked - STOP!
 --#    Time: 107 sec  Iteration: 0  Instance: /tb_train_crossing
+--# ** Note: OPENING /////
+--#    Time: 117500 ms  Iteration: 3  Instance: /tb_train_crossing/i_gate_simulation
+--# ** Note: OPENED |||||
+--#    Time: 122500 ms  Iteration: 4  Instance: /tb_train_crossing/i_gate_simulation
 
-	  -- 97 track blocked - stop
+	  -- 97 sec train in - 117 sec train out - 122 sec next safe in
 	  train_sim_model(20 sec, train_in_i, train_out_i, track_blocked_o);
-      wait for 13 sec;
+      wait for 10 sec;
 
-	  -- 110 sec
+	  -- 107 track blocked - STOP
+	  train_sim_model(20 sec, train_in_i, train_out_i, track_blocked_o);
+      wait for 50 sec;
+
+-- simulation end gate OPENED no train on track
 
 	end process run;
 
